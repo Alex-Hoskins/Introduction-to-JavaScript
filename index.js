@@ -179,7 +179,7 @@ var user = rock
 
 function game(user, computer){
   if(computer===user){
-    return("its a tie")
+    return("it's a tie")
   }
   else if(computer===0 && user===1){
     return("you win!")
