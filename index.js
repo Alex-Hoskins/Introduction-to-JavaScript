@@ -264,20 +264,20 @@ Using the grade function below do the following:
 */
 
 function grade(score){
-if(score>=90){
-  console.log('you got an A')
+if(score>=90 && score<=100){
+  return('you got an A')
 }
 else if(score>=80){
-  console.log('you got a B')
+  return('you got a B')
 }
 else if(score>=70){
-  console.log('you got a C')
+  return('you got a C')
 }
 else if(score>=60){
-  console.log('you got a D')
+  return('you got a D')
 }
 else if(score<60){
-  console.log('you got an F')
+  return('you got an F')
 }
 }
 grade(85)
