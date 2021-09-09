@@ -19,12 +19,12 @@ Do the following:
 
    HINT: no function required
 */
-const votingAge=30;{
+const votingAge=30;
   if(votingAge >= 18){
-    console.log('true');
+    console.log(true);
+  }else{
+    console.log(false);
   }
-}
-
 
 /*
 Task 1b - Values
@@ -68,12 +68,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-let a=3
-let b=6
+
 function multiply(a, b){
-  return(a*b)
+  return a * b; 
 }
-console.log(multiply(a,b))
+console.log(multiply(9,9))
 
 
 
@@ -86,7 +85,7 @@ Do the following:
  2. Use the received value to calculate the age in dog years (1 human year is equal to 7 dog years)
  3. Return the newly calculated age
 */
-let age= 4
+
 function dogYears(age){
   return(age*7)
 }
@@ -119,35 +118,33 @@ Puppies less than 1 year
   
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
-let pounds = 20
-let years = 6
+
 
 function hungryDog(pounds,years){
-  if(years<4/12 && years>2/12){
-    return(pounds * .1)
+  if(years>=1 && pounds<=5){
+    return(pounds * 0.05)
   }
-  else if(years<=7/12){
-    return(pounds * .05)
+  else if(years>=1 && pounds>=6 && pounds <=10){
+    return(pounds * .04)
   }
-  else if(years>7/12 && years<1){
-    return(pounds*.04)
+  else if(years>= 1 && pounds>=11 && pounds <=15){
+    return(pounds*.03)
   }
-  else if(pounds <= 5){
-    return(pounds * .05)
-  }
-  else if(pounds <= 10){
-    return(pounds*.04)
-  }
-  else if(pounds<=15){
-    return(pounds * .03)
-  }
-  else if(pounds>15){
+  else if(years >= 1 && pounds>15){
     return(pounds * .02)
   }
-  
-  
+  else if(years < 1 && years >= 0.583){
+    return(pounds*.04)
+  }
+  else if(years < 0.583 && years>=0.333){
+    return(pounds * .05)
+  }
+  else if(years<0.333){
+    return(pounds * 0.10)
+  }
+   
 }
-console.log(hungryDog(pounds,years))
+console.log(hungryDog(20,6))
 
 
 
@@ -171,30 +168,36 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-var rock = 0
-var paper = 1
-var scizzors = 2
-let computer= Math.floor(Math.random()*3)
-var user = rock
 
+let computer= Math.random();
+
+if(computer<=0.34){
+  computer='rock';
+}
+if(computer<=0.67){
+  computer='paper';
+}
+if(computer<=1.00){
+  computer='scissors'
+}
 function game(user, computer){
   if(computer===user){
     return("it's a tie")
   }
-  else if(computer===0 && user===1){
+  else if(computer==='rock' && user==='paper'){
     return("you win!")
   }
-  else if(computer===1 && user===2){
+  else if(computer==='paper' && user==='scissors'){
     return("you win!")
   }
-  else if(computer===2 && user===0){
+  else if(computer==='scissors' && user==='rock'){
     return ("you win!")
   }
   else{
     return("you lose!")
   }
 }
-console.log(game(user,computer))
+console.log(game('rock',computer))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
